@@ -51,7 +51,7 @@
                                 <a href="<?php echo e(route('Admin.Country.Members', $user->country_id)); ?>"> <?php echo e($user->country->name); ?>  </a>
                             </td>
                             <td><?php echo e($user->birthday); ?></td>
-                            <td><?php echo e($user->phone_mobile); ?></td>
+                            <td><?php echo e($user->mobile_phone); ?></td>
                             <td><?php echo e($user->created_at); ?></td>
 
                             <td class="hidden-480"><span class="label label-sm label-warning">Активный</span></td>

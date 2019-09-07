@@ -52,7 +52,7 @@
                                 <a href="{{ route('Admin.Country.Members', $user->country_id) }}"> {{ $user->country->name }}  </a>
                             </td>
                             <td>{{ $user->birthday }}</td>
-                            <td>{{ $user->phone_mobile }}</td>
+                            <td>{{ $user->mobile_phone }}</td>
                             <td>{{ $user->created_at }}</td>
 
                             <td class="hidden-480"><span class="label label-sm label-warning">Активный</span></td>
