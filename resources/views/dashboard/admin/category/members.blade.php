@@ -6,8 +6,11 @@
 
     <ul>
         @foreach($articles as $article)
+            $article->title
             <li>
-                <a href="{{ route('Admin.Users.Edit', $user->id) }}" title="{{ trans('dashboard.edit') }}"> {{ $user->name }} </a></li>
+                <a href="{{ route('Admin.Article.Edit', $article->id) }}" title="{{ trans('dashboard.edit') }}"> {{ $article->title }} </a>
+            </li>
+
         @endforeach
     </ul>
 

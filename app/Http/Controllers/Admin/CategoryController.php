@@ -58,6 +58,8 @@ class CategoryController extends Controller
     {
         $category = Category::find($id);
         $members = $category->articles();
+        //dd($members);
+        return view('dashboard.admin.category.members', ['articles' => $members, 'category' => $category]);
 
     }
 
