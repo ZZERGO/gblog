@@ -3,6 +3,7 @@
 Route::group(['prefix' => 'admin', 'as' => 'Admin.'], function(){
     Route::get('/', 'AdminController@index')->name('Main');
 
+
     // Пользователи
     Route::group(['prefix' => 'users', 'as' => 'Users.'], function (){
         Route::get('', 'Admin\UserController@index')->name('List');

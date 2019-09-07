@@ -49,7 +49,7 @@
                             <td>{{ $user->first_name }}</td>
                             <td>{{ $user->middle_name }}</td>
                             <td>
-                                <a href="{{ route('Admin.Country.Members', $user->country->id) }}"> {{ $user->country->name }} </a>
+                                <a href="#">  </a>
                             </td>
                             <td>{{ $user->birthday }}</td>
                             <td>{{ $user->phone_mobile }}</td>

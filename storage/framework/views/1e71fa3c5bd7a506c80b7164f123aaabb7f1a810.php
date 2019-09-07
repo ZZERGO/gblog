@@ -35,7 +35,7 @@
                     <?php $__currentLoopData = $articles; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $article): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <tr>
                             <td><a href="<?php echo e(route('Admin.Articles.Edit', $article->id)); ?>"> <?php echo e($article->title); ?> </a></td>
-                            <td><a href="<?php echo e(route('Admin.Cat')')); ?>"><?php echo e($article->category->name); ?></a></></td>
+                            <td><a href="#"><?php echo e($article->category->name); ?></a></></td>
                             <td><?php echo e($article->user->last_name); ?></td>
 
                             <td>
