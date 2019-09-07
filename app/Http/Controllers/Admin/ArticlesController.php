@@ -57,7 +57,7 @@ class ArticlesController extends Controller
      */
     public function show($id)
     {
-        //
+
     }
 
     /**
@@ -95,8 +95,9 @@ class ArticlesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
+     * @throws \Exception
      */
     public function destroy($id)
     {

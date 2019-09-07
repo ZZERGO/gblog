@@ -11,10 +11,10 @@
         {{ csrf_field() }}
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
-        <input size="50" type="text" name="title" placeholder="{{ trans('articles.Title') }}"><br>
+        <input size="50" type="text" name="title" placeholder="{{ trans('articles.Title') }}" required><br>
 
         {{ trans('articles.shortText') }}:<br>
-        <textarea cols="50" rows="5" name="short_text" ></textarea><br>
+        <textarea cols="50" rows="5" name="short_text" placeholder="Здесь короткая новость" required></textarea><br>
 
         {{ trans('articles.fullText') }}:<br>
         <textarea cols="50" rows="5" name="full_text"></textarea><br>

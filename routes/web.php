@@ -21,6 +21,7 @@ Route::group(['prefix' => 'admin', 'as' => 'Admin.'], function(){
        Route::get('{id}/edit', 'Admin\CategoryController@edit')->name('Edit');
        Route::post('{id}/edit', 'Admin\CategoryController@update')->name('Update');
        Route::post('{id}/delete', 'Admin\CategoryController@destroy')->name('Delete');
+        Route::get('{id}/articles', 'Admin\CategoryController@show');
 
     });
 
