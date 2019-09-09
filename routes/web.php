@@ -39,13 +39,13 @@ Route::group(['prefix' => 'admin', 'as' => 'Admin.'], function(){
 
     // Страны
     Route::group(['prefix' => 'country', 'as' => 'Country.'], function(){
-        Route::get('{id}/users', 'Admin\CountryController@show')->name('Members');
         Route::get('/', 'Admin\CountryController@index')->name('List');
         Route::get('{id}/edit', 'Admin\CountryController@edit')->name('Edit');
         Route::get('add', 'Admin\CountryController@create')->name('Add');
         Route::post('add', 'Admin\CountryController@store')->name('Save');
         Route::post('{id}/delete', 'Admin\CountryController@destroy')->name('Delete');
         Route::post('{id}/edit', 'Admin\CountryController@update')->name('Update');
+        Route::get('{id}/users', 'Admin\CountryController@show')->name('Members');
     });
 });
 
