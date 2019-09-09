@@ -48,10 +48,10 @@
                             <td><?php echo e($user->first_name); ?></td>
                             <td><?php echo e($user->middle_name); ?></td>
                             <td>
-                                <a href="<?php echo e(route('Admin.Country.Members', $user->country->id)); ?>"> <?php echo e($user->country->name); ?> </a>
+                                <a href="<?php echo e(route('Admin.Country.Members', $user->country_id)); ?>"> <?php echo e($user->country->name); ?>  </a>
                             </td>
                             <td><?php echo e($user->birthday); ?></td>
-                            <td><?php echo e($user->phone_mobile); ?></td>
+                            <td><?php echo e($user->mobile_phone); ?></td>
                             <td><?php echo e($user->created_at); ?></td>
 
                             <td class="hidden-480"><span class="label label-sm label-warning">Активный</span></td>

@@ -57,6 +57,7 @@ class ArticlesController extends Controller
      */
     public function show($id)
     {
+        $articles = Article::find($id);
 
     }
 
