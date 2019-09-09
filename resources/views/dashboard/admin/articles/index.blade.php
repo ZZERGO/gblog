@@ -36,7 +36,7 @@
                     @foreach($articles as $article)
                         <tr>
                             <td><a href="{{ route('Admin.Articles.Edit', $article->id) }}"> {{ $article->title }} </a></td>
-                            <td><a href="{{ route('Admin.Cat')') }}">{{ $article->category->name }}</a></></td>
+                            <td><a href="{{ route('Admin.Category.Index') }}">{{ $article->category->name }}</a></></td>
                             <td>{{ $article->user->last_name }}</td>
 
                             <td>
