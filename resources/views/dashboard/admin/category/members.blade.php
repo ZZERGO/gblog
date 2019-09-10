@@ -17,7 +17,7 @@
     <form action="{{ route('Admin.Articles.Add') }}" name="add" method="get">
         {{ csrf_field() }}
         <a href="{{ route('Admin.Articles.List') }}"><input type="button" value="{{ trans('pagination.previous') }}"></a>
-        <a href="{{ route('Admin.Articles.Add') }}"> <input type="button" value="{{ trans('dashboard.add') }}"> </a>
+        <a href="{{ route('Admin.Articles.Add', ['category_id' => $category->id]) }}"> <input type="button" value="{{ trans('dashboard.add') }}"> </a>
     </form>
 
 

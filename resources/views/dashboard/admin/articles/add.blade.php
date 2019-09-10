@@ -1,7 +1,10 @@
 @extends('dashboard.admin.main')
 
 @section('content')
-    <h1>Добавление статьи</h1>
+
+    <h1>Добавление статьи
+
+    </h1>
 
     @if(Session::has('message'))
         <h2>{!!Session::get('message')!!}</h2>
@@ -22,7 +25,11 @@
         {{ trans('articles.selectCategory') }}:
         <select name="category_id" required>
             @foreach($categories as $category)
-                <option value="{{ $category->id }}">{{ $category->name }}</option>
+                @if (  $_GET['category_id']   == $category->id)
+                    <option value="{{ $category->id }}" selected>{{ $category->name }}</option>
+                @else
+                    <option value="{{ $category->id }}" >{{ $category->name }}</option>
+                @endif
             @endforeach
         </select>
         <br><br>

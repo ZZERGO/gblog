@@ -7,6 +7,7 @@
         <input type="text" name="name" value="<?php echo e($user->name); ?>"><br>
         <input type="email" name="email" value="<?php echo e($user->email); ?>"><br>
         <input type="password" name="password" value="<?php echo e($user->password); ?>"><br>
+        <input type="date" name="birthday" value="<?php echo e($user->birthday); ?>"><br>
 
         <a href="<?php echo e(route('Admin.Users.List')); ?>"> <input type="button" value="<?php echo e(trans('dashboard.cancel')); ?>"></a>
         <input type="submit" value="Сохранить">
