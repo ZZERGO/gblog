@@ -12,8 +12,8 @@
     <form action="<?php echo e(route('Admin.Users.Add')); ?>" name="add" method="get">
         <?php echo e(csrf_field()); ?>
 
-        <a href="<?php echo e(route('Admin.Country.List')); ?>"><input type="button" value="<?php echo e(trans('pagination.previous')); ?>"></a>
-        <a href="<?php echo e(route('Admin.Users.Add')); ?>"> <input type="button" value="<?php echo e(trans('dashboard.add')); ?>"> </a>
+        <a href="<?php echo e(route('Admin.Users.List')); ?>"><input type="button" value="<?php echo e(trans('pagination.previous')); ?>"></a>
+        <a href="<?php echo e(route('Admin.Users.Add', ['country_id' => $country->id])); ?>"> <input type="button" value="<?php echo e(trans('dashboard.add')); ?>"> </a>
     </form>
 
 

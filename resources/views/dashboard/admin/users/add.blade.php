@@ -53,7 +53,11 @@
                 <td>
                     <select name="country_id">
                         @foreach($countries as $country)
-                            <option value="{{ $country->id }}"> {{ $country->name }}</option>
+                            @if (  $_GET['country_id']   == $country->id)
+                                <option value="{{ $country->id }}" selected>{{ $country->name }}</option>
+                            @else
+                                <option value="{{ $country->id }}"> {{ $country->name }}</option>
+                            @endif
                         @endforeach
                     </select>
                 </td>
