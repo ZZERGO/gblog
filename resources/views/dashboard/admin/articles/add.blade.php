@@ -25,7 +25,7 @@
         {{ trans('articles.selectCategory') }}:
         <select name="category_id" required>
             @foreach($categories as $category)
-                @if (  $_GET['category_id']   == $category->id)
+                @if ( ($_GET) && ($_GET['category_id']   == $category->id))
                     <option value="{{ $category->id }}" selected>{{ $category->name }}</option>
                 @else
                     <option value="{{ $category->id }}" >{{ $category->name }}</option>

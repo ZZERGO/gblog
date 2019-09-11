@@ -24,7 +24,7 @@
         <?php echo e(trans('articles.selectCategory')); ?>:
         <select name="category_id" required>
             <?php $__currentLoopData = $categories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $category): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                <?php if(  $_GET['category_id']   == $category->id): ?>
+                <?php if( ($_GET) && ($_GET['category_id']   == $category->id)): ?>
                     <option value="<?php echo e($category->id); ?>" selected><?php echo e($category->name); ?></option>
                 <?php else: ?>
                     <option value="<?php echo e($category->id); ?>" ><?php echo e($category->name); ?></option>
