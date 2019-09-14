@@ -16,8 +16,9 @@ class CategoryController extends Controller
      */
     public function index()
     {
+        $title='Список категорий';
         $categories = Category::all();
-        return view('dashboard.admin.category.index', ['categories' => $categories]);
+        return response()->view('dashboard.admin.category.index', ['categories' => $categories, 'title'=>$title]);
     }
 
     /**
@@ -27,7 +28,8 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('dashboard.admin.category.add');
+        $title='Добавление категории';
+        return response()->view('dashboard.admin.category.add', ['title'=>$title]);
     }
 
     /**
@@ -57,9 +59,14 @@ class CategoryController extends Controller
     public function show($id)
     {
         $category = Category::find($id);
+        $title='Статьи в категории ' . $category->name;
         $articles = $category->articles()->where('category_id', '=', $id)->get();
-        //dd($articles);
-        return view('dashboard.admin.category.members', ['articles' => $articles, 'category' => $category]);
+        return response()->view('dashboard.admin.category.members',
+            [
+                'articles' => $articles,
+                'category' => $category,
+                'title'=>$title
+            ]);
     }
 
     /**
@@ -71,7 +78,8 @@ class CategoryController extends Controller
     public function edit($id)
     {
         $category = Category::find($id);
-        return view('dashboard.admin.category.edit', ['category'=>$category]);
+        $title='Редактирование категории ' . $category->name;
+        return view('dashboard.admin.category.edit', ['category'=>$category, 'title'=>$title]);
     }
 
     /**

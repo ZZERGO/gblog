@@ -16,8 +16,14 @@ class ArticlesController extends Controller
      */
     public function index()
     {
+        $title='Список статей';
         $articles = Article::all();
-        return view('dashboard.admin.articles.index', ['articles' => $articles]);
+        return response()->view('dashboard.admin.articles.index',
+            [
+                'articles' => $articles,
+                'title'=>$title
+            ]
+        );
     }
 
     /**
@@ -27,8 +33,14 @@ class ArticlesController extends Controller
      */
     public function create()
     {
+        $title='Добавление статьи';
         $categories = Category::all();
-        return view('dashboard.admin.articles.add', ['categories' => $categories]);
+        return response()->view('dashboard.admin.articles.add',
+            [
+                'categories' => $categories,
+                'title'=>$title
+            ]
+        );
     }
 
     /**
@@ -70,7 +82,14 @@ class ArticlesController extends Controller
     {
         $article = Article::find($id);
         $categories = Category::all();
-        return view('dashboard.admin.articles.edit', ['article' => $article, 'categories' => $categories]);
+        $title='Редактирование статьи';
+        return view('dashboard.admin.articles.edit',
+            [
+                'article' => $article,
+                'categories' => $categories,
+                'title'=>$title
+            ]
+        );
     }
 
     /**

@@ -18,7 +18,7 @@ class UserController extends Controller
     {
         $users = User::all();
 
-        return view('dashboard.admin.users.index', ['users' => $users]);
+        return response()->view('dashboard.admin.users.index', ['users' => $users, 'title'=>'Управление пользователями']);
     }
 
     /**
@@ -28,8 +28,9 @@ class UserController extends Controller
      */
     public function create()
     {
+        $title='Добавление пользователя';
         $countries = Country::all();
-        return view('dashboard.admin.users.add', ['countries' => $countries]);
+        return response()->view('dashboard.admin.users.add', ['countries' => $countries, 'title'=>$title]);
     }
 
     /**
@@ -71,7 +72,8 @@ class UserController extends Controller
     public function edit($id)
     {
         $user = User::find($id);
-        return view('dashboard.admin.users.edit', ['user' => $user]);
+        $title='Редактирование пользователя ' . $user->name;
+        return response()->view('dashboard.admin.users.edit', ['user' => $user, 'title'=>$title]);
     }
 
     /**

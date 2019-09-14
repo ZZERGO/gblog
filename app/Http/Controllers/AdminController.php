@@ -14,7 +14,8 @@ class AdminController extends Controller
     }
 
     public function index(){
-        return view('dashboard.admin.main');
+
+        return response()->view('dashboard.admin.main', ['title' => 'Главная страница админки']);
     }
 
     public function users()

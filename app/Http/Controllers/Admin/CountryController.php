@@ -15,8 +15,9 @@ class CountryController extends Controller
      */
     public function index()
     {
+        $title='Список стран';
         $countries = Country::all();
-        return view('dashboard.admin.countries.index', ['countries' => $countries]);
+        return response()->view('dashboard.admin.countries.index', ['countries' => $countries, 'title'=>$title]);
     }
 
     /**
@@ -26,7 +27,8 @@ class CountryController extends Controller
      */
     public function create()
     {
-        return view('dashboard.admin.countries.add');
+        $title='Добавление страны';
+        return response()->view('dashboard.admin.countries.add', ['title'=>$title]);
     }
 
     /**
@@ -56,8 +58,9 @@ class CountryController extends Controller
     public function show($id)
     {
         $country = Country::find($id);
+        $title='Список сотрудников с гражданством ' . $country->name;
         $members = $country->users;
-        return view('dashboard.admin.countries.members', ['users' => $members, 'country' => $country]);
+        return view('dashboard.admin.countries.members', ['users' => $members, 'country' => $country, 'title'=>$title]);
     }
 
     /**
@@ -68,8 +71,9 @@ class CountryController extends Controller
      */
     public function edit($id)
     {
+        $title='Редактирование страны';
         $country = Country::find($id);
-        return view('dashboard.admin.countries.edit', ['country' => $country]);
+        return response()->view('dashboard.admin.countries.edit', ['country' => $country, 'title'=>$title]);
     }
 
     /**
