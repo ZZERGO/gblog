@@ -13,6 +13,7 @@ class DashboardController extends Controller
 
     public function index()
     {
-        return view('dashboard.main');
+        $title='Рабочая область';
+        return response()->view('dashboard.main', ['title'=>$title]);
     }
 }
